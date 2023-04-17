@@ -1,5 +1,6 @@
 #ifndef DOG_H
 #define DOG_H
+
 /**
  * struct dog - a dog data type
  * @name: dog name
@@ -12,5 +13,5 @@ struct dog
 	char *name;
 	float age;
 	char *owner;
-}
+};
 #endif
