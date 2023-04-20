@@ -1,11 +1,11 @@
 #ifndef CALC_H
 #define CALC_H
+#include <stddef.h>
 /**
  * struct op - struct
  * @op: The operator
  * @f: pointer to function
  */
-#include <stddef.h>
 typedef struct op
 {
 	char *op;
