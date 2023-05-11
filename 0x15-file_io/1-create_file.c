@@ -1,5 +1,5 @@
 #include "main.h"
-#include <string.h>
+
 /**
  * create_file - creates a file
  * @filename: A pointer to the name of the file
@@ -8,8 +8,13 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int f, bytes, len = strlen(text_content);
+	int f, bytes, len = 0;
 
+	if (text_content)
+	{
+		while (text_content[len])
+			len++;
+	}
 	if (!filename || !text_content)
 		return (-1);
 	f = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
