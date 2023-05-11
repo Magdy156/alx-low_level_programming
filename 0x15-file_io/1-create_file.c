@@ -10,14 +10,12 @@ int create_file(const char *filename, char *text_content)
 {
 	int f, bytes, len = strlen(text_content);
 
-	if (!filename)
+	if (!filename || text_content)
 		return (-1);
 	f = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	if (len)
-		bytes = write(f, text_content, len);
+	bytes = write(f, text_content, len);
 	if (f == -1 || bytes == -1)
 		return (-1);
 	close(f);
-	return (bytes == len ? 1 : -1);
+	return (1);
 }
-
